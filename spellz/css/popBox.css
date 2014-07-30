@@ -1,0 +1,8 @@
+.popBox{
+    display:none;
+    position:absolute;
+    height:0px;
+    width:0px;
+    background:black;
+    z-index: -100;
+}

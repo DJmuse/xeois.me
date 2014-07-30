@@ -1,0 +1,945 @@
+<E2ETraceEvent xmlns="http://schemas.microsoft.com/2004/06/E2ETraceEvent">
+    <System xmlns="http://schemas.microsoft.com/2004/06/windows/eventlog/system">
+        <EventID>3</EventID>
+        <Type>3</Type>
+        <SubType Name="Error">0</SubType>
+        <Level>2</Level>
+        <TimeCreated SystemTime="2013-10-03T15:18:37.8017565Z" />
+        <Source Name="MixedInKey" />
+        <Correlation ActivityID="{00000000-0000-0000-0000-000000000000}" />
+        <Execution ProcessName="MixedInKey" ProcessID="1680" ThreadID="10" />
+        <Channel />
+        <Computer>XEO-PC</Computer>
+    </System>
+    <ApplicationData>
+        <TraceData>
+            <DataItem>Version: 5.0.794.0</DataItem>
+            <DataItem>System.ServiceModel.EndpointNotFoundException: There was no endpoint listening at https://online5.mixedinkey.com/Services/License/CheckLicense that could accept the message. This is often caused by an incorrect address or SOAP action. See InnerException, if present, for more details. ---&gt; System.Net.WebException: Unable to connect to the remote server ---&gt; System.Net.Sockets.SocketException: An attempt was made to access a socket in a way forbidden by its access permissions 54.225.210.244:443
+                at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+                at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket&amp; socket, IPAddress&amp; address, ConnectSocketState state, IAsyncResult asyncResult, Int32 timeout, Exception&amp; exception)
+                --- End of inner exception stack trace ---
+                at System.Net.HttpWebRequest.GetResponse()
+                at System.ServiceModel.Channels.HttpChannelFactory.HttpRequestChannel.HttpChannelRequest.WaitForReply(TimeSpan timeout)
+                --- End of inner exception stack trace ---
+
+                Server stack trace:
+                at System.ServiceModel.Channels.HttpChannelUtilities.ProcessGetResponseWebException(WebException webException, HttpWebRequest request, HttpAbortReason abortReason)
+                at System.ServiceModel.Channels.HttpChannelFactory.HttpRequestChannel.HttpChannelRequest.WaitForReply(TimeSpan timeout)
+                at System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+                at System.ServiceModel.Dispatcher.RequestChannelBinder.Request(Message message, TimeSpan timeout)
+                at System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+                at System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+                at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+                Exception rethrown at [0]:
+                at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+                at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData&amp; msgData, Int32 type)
+                at MixedInKey.Online.ILicenseServiceAsync.CheckLicense(LicenseCheckRequest request)
+                at MixedInKey.Online.LicenseServiceClient.CheckLicense(LicenseCheckRequest request)
+                at MixedInKey.Services.LicensingService.ValidateVipCode(String vipCode)</DataItem>
+        </TraceData>
+    </ApplicationData>
+</E2ETraceEvent>
+<E2ETraceEvent xmlns="http://schemas.microsoft.com/2004/06/E2ETraceEvent">
+<System xmlns="http://schemas.microsoft.com/2004/06/windows/eventlog/system">
+    <EventID>1</EventID>
+    <Type>3</Type>
+    <SubType Name="Error">0</SubType>
+    <Level>2</Level>
+    <TimeCreated SystemTime="2013-10-03T15:19:43.0264871Z" />
+    <Source Name="MixedInKey" />
+    <Correlation ActivityID="{00000000-0000-0000-0000-000000000000}" />
+    <Execution ProcessName="MixedInKey" ProcessID="1680" ThreadID="1" />
+    <Channel />
+    <Computer>XEO-PC</Computer>
+</System>
+<ApplicationData>
+    <TraceData>
+        <DataItem>Version: 5.0.794.0</DataItem>
+        <DataItem>C:\Users\Xeo\Desktop\Titan (Pigeonfox Remix).mp3</DataItem>
+        <DataItem>MixedInKey.Online.KeyDetectionException: Mixed In Key could not detect the key of this file due to a temporary problem connecting to the server. Please retry in a few moments ---&gt; System.ServiceModel.EndpointNotFoundException: There was no endpoint listening at https://online5.mixedinkey.com/Services/Analysis/AnalyzeSong that could accept the message. This is often caused by an incorrect address or SOAP action. See InnerException, if present, for more details. ---&gt; System.Net.WebException: Unable to connect to the remote server ---&gt; System.Net.Sockets.SocketException: An attempt was made to access a socket in a way forbidden by its access permissions 23.21.226.208:443
+            at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+            at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket&amp; socket, IPAddress&amp; address, ConnectSocketState state, IAsyncResult asyncResult, Int32 timeout, Exception&amp; exception)
+            --- End of inner exception stack trace ---
+            at System.Net.HttpWebRequest.EndGetRequestStream(IAsyncResult asyncResult, TransportContext&amp; context)
+            at System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStreamAsyncResult.CompleteGetRequestStream(IAsyncResult result)
+            --- End of inner exception stack trace ---
+
+            Server stack trace:
+            at System.Runtime.AsyncResult.End[TAsyncResult](IAsyncResult result)
+            at System.ServiceModel.Channels.ServiceChannel.SendAsyncResult.End(SendAsyncResult result)
+            at System.ServiceModel.Channels.ServiceChannel.EndCall(String action, Object[] outs, IAsyncResult result)
+            at System.ServiceModel.Channels.ServiceChannelProxy.InvokeEndService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+            at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+            Exception rethrown at [0]:
+            at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+            at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData&amp; msgData, Int32 type)
+            at MixedInKey.Online.IAnalysisServiceAsync.EndAnalyzeSong(IAsyncResult result)
+            at MixedInKey.Online.AnalysisServiceClient.EndAnalyzeSong(IAsyncResult result)
+            at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endMethod, TaskCompletionSource`1 tcs)
+            --- End of inner exception stack trace ---
+            at MixedInKey.Online.KeyDetectionService.&lt;DetectKey&gt;b__3(Task`1 t)
+            at System.Threading.Tasks.Task`1.&lt;&gt;c__DisplayClass1a`1.&lt;ContinueWith&gt;b__19()
+            at System.Threading.Tasks.Task`1.InvokeFuture(Object futureAsObj)
+            at System.Threading.Tasks.Task.InnerInvoke()
+            at System.Threading.Tasks.Task.Execute()</DataItem>
+    </TraceData>
+</ApplicationData>
+</E2ETraceEvent>
+<E2ETraceEvent xmlns="http://schemas.microsoft.com/2004/06/E2ETraceEvent">
+<System xmlns="http://schemas.microsoft.com/2004/06/windows/eventlog/system">
+    <EventID>1</EventID>
+    <Type>3</Type>
+    <SubType Name="Error">0</SubType>
+    <Level>2</Level>
+    <TimeCreated SystemTime="2013-10-03T15:19:43.0584889Z" />
+    <Source Name="MixedInKey" />
+    <Correlation ActivityID="{00000000-0000-0000-0000-000000000000}" />
+    <Execution ProcessName="MixedInKey" ProcessID="1680" ThreadID="1" />
+    <Channel />
+    <Computer>XEO-PC</Computer>
+</System>
+<ApplicationData>
+    <TraceData>
+        <DataItem>Version: 5.0.794.0</DataItem>
+        <DataItem>C:\Users\Xeo\Desktop\Trap!!! Gent &amp; Jawns - Turnup.mp3</DataItem>
+        <DataItem>MixedInKey.Online.KeyDetectionException: Mixed In Key could not detect the key of this file due to a temporary problem connecting to the server. Please retry in a few moments ---&gt; System.ServiceModel.EndpointNotFoundException: There was no endpoint listening at https://online5.mixedinkey.com/Services/Analysis/AnalyzeSong that could accept the message. This is often caused by an incorrect address or SOAP action. See InnerException, if present, for more details. ---&gt; System.Net.WebException: Unable to connect to the remote server ---&gt; System.Net.Sockets.SocketException: An attempt was made to access a socket in a way forbidden by its access permissions 23.21.226.208:443
+            at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+            at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket&amp; socket, IPAddress&amp; address, ConnectSocketState state, IAsyncResult asyncResult, Int32 timeout, Exception&amp; exception)
+            --- End of inner exception stack trace ---
+            at System.Net.HttpWebRequest.EndGetRequestStream(IAsyncResult asyncResult, TransportContext&amp; context)
+            at System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStreamAsyncResult.CompleteGetRequestStream(IAsyncResult result)
+            --- End of inner exception stack trace ---
+
+            Server stack trace:
+            at System.Runtime.AsyncResult.End[TAsyncResult](IAsyncResult result)
+            at System.ServiceModel.Channels.ServiceChannel.SendAsyncResult.End(SendAsyncResult result)
+            at System.ServiceModel.Channels.ServiceChannel.EndCall(String action, Object[] outs, IAsyncResult result)
+            at System.ServiceModel.Channels.ServiceChannelProxy.InvokeEndService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+            at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+            Exception rethrown at [0]:
+            at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+            at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData&amp; msgData, Int32 type)
+            at MixedInKey.Online.IAnalysisServiceAsync.EndAnalyzeSong(IAsyncResult result)
+            at MixedInKey.Online.AnalysisServiceClient.EndAnalyzeSong(IAsyncResult result)
+            at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endMethod, TaskCompletionSource`1 tcs)
+            --- End of inner exception stack trace ---
+            at MixedInKey.Online.KeyDetectionService.&lt;DetectKey&gt;b__3(Task`1 t)
+            at System.Threading.Tasks.Task`1.&lt;&gt;c__DisplayClass1a`1.&lt;ContinueWith&gt;b__19()
+            at System.Threading.Tasks.Task`1.InvokeFuture(Object futureAsObj)
+            at System.Threading.Tasks.Task.InnerInvoke()
+            at System.Threading.Tasks.Task.Execute()</DataItem>
+    </TraceData>
+</ApplicationData>
+</E2ETraceEvent>
+<E2ETraceEvent xmlns="http://schemas.microsoft.com/2004/06/E2ETraceEvent">
+<System xmlns="http://schemas.microsoft.com/2004/06/windows/eventlog/system">
+    <EventID>1</EventID>
+    <Type>3</Type>
+    <SubType Name="Error">0</SubType>
+    <Level>2</Level>
+    <TimeCreated SystemTime="2013-10-03T15:19:44.5255728Z" />
+    <Source Name="MixedInKey" />
+    <Correlation ActivityID="{00000000-0000-0000-0000-000000000000}" />
+    <Execution ProcessName="MixedInKey" ProcessID="1680" ThreadID="1" />
+    <Channel />
+    <Computer>XEO-PC</Computer>
+</System>
+<ApplicationData>
+    <TraceData>
+        <DataItem>Version: 5.0.794.0</DataItem>
+        <DataItem>C:\Users\Xeo\Desktop\Helicopter Showdown &amp; Virtual Riot - Cali Born [Electro-Dance.pl].mp3</DataItem>
+        <DataItem>MixedInKey.Online.KeyDetectionException: Mixed In Key could not detect the key of this file due to a temporary problem connecting to the server. Please retry in a few moments ---&gt; System.ServiceModel.EndpointNotFoundException: There was no endpoint listening at https://online5.mixedinkey.com/Services/Analysis/AnalyzeSong that could accept the message. This is often caused by an incorrect address or SOAP action. See InnerException, if present, for more details. ---&gt; System.Net.WebException: Unable to connect to the remote server ---&gt; System.Net.Sockets.SocketException: An attempt was made to access a socket in a way forbidden by its access permissions 23.21.226.208:443
+            at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+            at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket&amp; socket, IPAddress&amp; address, ConnectSocketState state, IAsyncResult asyncResult, Int32 timeout, Exception&amp; exception)
+            --- End of inner exception stack trace ---
+            at System.Net.HttpWebRequest.EndGetRequestStream(IAsyncResult asyncResult, TransportContext&amp; context)
+            at System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStreamAsyncResult.CompleteGetRequestStream(IAsyncResult result)
+            --- End of inner exception stack trace ---
+
+            Server stack trace:
+            at System.Runtime.AsyncResult.End[TAsyncResult](IAsyncResult result)
+            at System.ServiceModel.Channels.ServiceChannel.SendAsyncResult.End(SendAsyncResult result)
+            at System.ServiceModel.Channels.ServiceChannel.EndCall(String action, Object[] outs, IAsyncResult result)
+            at System.ServiceModel.Channels.ServiceChannelProxy.InvokeEndService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+            at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+            Exception rethrown at [0]:
+            at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+            at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData&amp; msgData, Int32 type)
+            at MixedInKey.Online.IAnalysisServiceAsync.EndAnalyzeSong(IAsyncResult result)
+            at MixedInKey.Online.AnalysisServiceClient.EndAnalyzeSong(IAsyncResult result)
+            at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endMethod, TaskCompletionSource`1 tcs)
+            --- End of inner exception stack trace ---
+            at MixedInKey.Online.KeyDetectionService.&lt;DetectKey&gt;b__3(Task`1 t)
+            at System.Threading.Tasks.Task`1.&lt;&gt;c__DisplayClass1a`1.&lt;ContinueWith&gt;b__19()
+            at System.Threading.Tasks.Task`1.InvokeFuture(Object futureAsObj)
+            at System.Threading.Tasks.Task.InnerInvoke()
+            at System.Threading.Tasks.Task.Execute()</DataItem>
+    </TraceData>
+</ApplicationData>
+</E2ETraceEvent>
+<E2ETraceEvent xmlns="http://schemas.microsoft.com/2004/06/E2ETraceEvent">
+<System xmlns="http://schemas.microsoft.com/2004/06/windows/eventlog/system">
+    <EventID>1</EventID>
+    <Type>3</Type>
+    <SubType Name="Error">0</SubType>
+    <Level>2</Level>
+    <TimeCreated SystemTime="2013-10-03T15:19:47.5547461Z" />
+    <Source Name="MixedInKey" />
+    <Correlation ActivityID="{00000000-0000-0000-0000-000000000000}" />
+    <Execution ProcessName="MixedInKey" ProcessID="1680" ThreadID="1" />
+    <Channel />
+    <Computer>XEO-PC</Computer>
+</System>
+<ApplicationData>
+    <TraceData>
+        <DataItem>Version: 5.0.794.0</DataItem>
+        <DataItem>C:\Users\Xeo\Desktop\140_8A_HS - TRAPTSTEP [MSTR].mp3</DataItem>
+        <DataItem>MixedInKey.Online.KeyDetectionException: Mixed In Key could not detect the key of this file due to a temporary problem connecting to the server. Please retry in a few moments ---&gt; System.ServiceModel.EndpointNotFoundException: There was no endpoint listening at https://online5.mixedinkey.com/Services/Analysis/AnalyzeSong that could accept the message. This is often caused by an incorrect address or SOAP action. See InnerException, if present, for more details. ---&gt; System.Net.WebException: Unable to connect to the remote server ---&gt; System.Net.Sockets.SocketException: An attempt was made to access a socket in a way forbidden by its access permissions 23.21.226.208:443
+            at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+            at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket&amp; socket, IPAddress&amp; address, ConnectSocketState state, IAsyncResult asyncResult, Int32 timeout, Exception&amp; exception)
+            --- End of inner exception stack trace ---
+            at System.Net.HttpWebRequest.EndGetRequestStream(IAsyncResult asyncResult, TransportContext&amp; context)
+            at System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStreamAsyncResult.CompleteGetRequestStream(IAsyncResult result)
+            --- End of inner exception stack trace ---
+
+            Server stack trace:
+            at System.Runtime.AsyncResult.End[TAsyncResult](IAsyncResult result)
+            at System.ServiceModel.Channels.ServiceChannel.SendAsyncResult.End(SendAsyncResult result)
+            at System.ServiceModel.Channels.ServiceChannel.EndCall(String action, Object[] outs, IAsyncResult result)
+            at System.ServiceModel.Channels.ServiceChannelProxy.InvokeEndService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+            at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+            Exception rethrown at [0]:
+            at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+            at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData&amp; msgData, Int32 type)
+            at MixedInKey.Online.IAnalysisServiceAsync.EndAnalyzeSong(IAsyncResult result)
+            at MixedInKey.Online.AnalysisServiceClient.EndAnalyzeSong(IAsyncResult result)
+            at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endMethod, TaskCompletionSource`1 tcs)
+            --- End of inner exception stack trace ---
+            at MixedInKey.Online.KeyDetectionService.&lt;DetectKey&gt;b__3(Task`1 t)
+            at System.Threading.Tasks.Task`1.&lt;&gt;c__DisplayClass1a`1.&lt;ContinueWith&gt;b__19()
+            at System.Threading.Tasks.Task`1.InvokeFuture(Object futureAsObj)
+            at System.Threading.Tasks.Task.InnerInvoke()
+            at System.Threading.Tasks.Task.Execute()</DataItem>
+    </TraceData>
+</ApplicationData>
+</E2ETraceEvent>
+<E2ETraceEvent xmlns="http://schemas.microsoft.com/2004/06/E2ETraceEvent">
+<System xmlns="http://schemas.microsoft.com/2004/06/windows/eventlog/system">
+    <EventID>1</EventID>
+    <Type>3</Type>
+    <SubType Name="Error">0</SubType>
+    <Level>2</Level>
+    <TimeCreated SystemTime="2013-10-03T15:20:22.5117455Z" />
+    <Source Name="MixedInKey" />
+    <Correlation ActivityID="{00000000-0000-0000-0000-000000000000}" />
+    <Execution ProcessName="MixedInKey" ProcessID="1680" ThreadID="1" />
+    <Channel />
+    <Computer>XEO-PC</Computer>
+</System>
+<ApplicationData>
+    <TraceData>
+        <DataItem>Version: 5.0.794.0</DataItem>
+        <DataItem>C:\Users\Xeo\Desktop\Trap!!! Gent &amp; Jawns - Turnup.mp3</DataItem>
+        <DataItem>MixedInKey.Online.KeyDetectionException: Mixed In Key could not detect the key of this file due to a temporary problem connecting to the server. Please retry in a few moments ---&gt; System.ServiceModel.EndpointNotFoundException: There was no endpoint listening at https://online5.mixedinkey.com/Services/Analysis/AnalyzeSong that could accept the message. This is often caused by an incorrect address or SOAP action. See InnerException, if present, for more details. ---&gt; System.Net.WebException: Unable to connect to the remote server ---&gt; System.Net.Sockets.SocketException: An attempt was made to access a socket in a way forbidden by its access permissions 23.21.226.208:443
+            at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+            at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket&amp; socket, IPAddress&amp; address, ConnectSocketState state, IAsyncResult asyncResult, Int32 timeout, Exception&amp; exception)
+            --- End of inner exception stack trace ---
+            at System.Net.HttpWebRequest.EndGetRequestStream(IAsyncResult asyncResult, TransportContext&amp; context)
+            at System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStreamAsyncResult.CompleteGetRequestStream(IAsyncResult result)
+            --- End of inner exception stack trace ---
+
+            Server stack trace:
+            at System.Runtime.AsyncResult.End[TAsyncResult](IAsyncResult result)
+            at System.ServiceModel.Channels.ServiceChannel.SendAsyncResult.End(SendAsyncResult result)
+            at System.ServiceModel.Channels.ServiceChannel.EndCall(String action, Object[] outs, IAsyncResult result)
+            at System.ServiceModel.Channels.ServiceChannelProxy.InvokeEndService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+            at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+            Exception rethrown at [0]:
+            at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+            at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData&amp; msgData, Int32 type)
+            at MixedInKey.Online.IAnalysisServiceAsync.EndAnalyzeSong(IAsyncResult result)
+            at MixedInKey.Online.AnalysisServiceClient.EndAnalyzeSong(IAsyncResult result)
+            at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endMethod, TaskCompletionSource`1 tcs)
+            --- End of inner exception stack trace ---
+            at MixedInKey.Online.KeyDetectionService.&lt;DetectKey&gt;b__3(Task`1 t)
+            at System.Threading.Tasks.Task`1.&lt;&gt;c__DisplayClass1a`1.&lt;ContinueWith&gt;b__19()
+            at System.Threading.Tasks.Task`1.InvokeFuture(Object futureAsObj)
+            at System.Threading.Tasks.Task.InnerInvoke()
+            at System.Threading.Tasks.Task.Execute()</DataItem>
+    </TraceData>
+</ApplicationData>
+</E2ETraceEvent>
+<E2ETraceEvent xmlns="http://schemas.microsoft.com/2004/06/E2ETraceEvent">
+<System xmlns="http://schemas.microsoft.com/2004/06/windows/eventlog/system">
+    <EventID>1</EventID>
+    <Type>3</Type>
+    <SubType Name="Error">0</SubType>
+    <Level>2</Level>
+    <TimeCreated SystemTime="2013-10-03T15:20:22.8387642Z" />
+    <Source Name="MixedInKey" />
+    <Correlation ActivityID="{00000000-0000-0000-0000-000000000000}" />
+    <Execution ProcessName="MixedInKey" ProcessID="1680" ThreadID="1" />
+    <Channel />
+    <Computer>XEO-PC</Computer>
+</System>
+<ApplicationData>
+    <TraceData>
+        <DataItem>Version: 5.0.794.0</DataItem>
+        <DataItem>C:\Users\Xeo\Desktop\Titan (Pigeonfox Remix).mp3</DataItem>
+        <DataItem>MixedInKey.Online.KeyDetectionException: Mixed In Key could not detect the key of this file due to a temporary problem connecting to the server. Please retry in a few moments ---&gt; System.ServiceModel.EndpointNotFoundException: There was no endpoint listening at https://online5.mixedinkey.com/Services/Analysis/AnalyzeSong that could accept the message. This is often caused by an incorrect address or SOAP action. See InnerException, if present, for more details. ---&gt; System.Net.WebException: Unable to connect to the remote server ---&gt; System.Net.Sockets.SocketException: An attempt was made to access a socket in a way forbidden by its access permissions 23.21.226.208:443
+            at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+            at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket&amp; socket, IPAddress&amp; address, ConnectSocketState state, IAsyncResult asyncResult, Int32 timeout, Exception&amp; exception)
+            --- End of inner exception stack trace ---
+            at System.Net.HttpWebRequest.EndGetRequestStream(IAsyncResult asyncResult, TransportContext&amp; context)
+            at System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStreamAsyncResult.CompleteGetRequestStream(IAsyncResult result)
+            --- End of inner exception stack trace ---
+
+            Server stack trace:
+            at System.Runtime.AsyncResult.End[TAsyncResult](IAsyncResult result)
+            at System.ServiceModel.Channels.ServiceChannel.SendAsyncResult.End(SendAsyncResult result)
+            at System.ServiceModel.Channels.ServiceChannel.EndCall(String action, Object[] outs, IAsyncResult result)
+            at System.ServiceModel.Channels.ServiceChannelProxy.InvokeEndService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+            at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+            Exception rethrown at [0]:
+            at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+            at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData&amp; msgData, Int32 type)
+            at MixedInKey.Online.IAnalysisServiceAsync.EndAnalyzeSong(IAsyncResult result)
+            at MixedInKey.Online.AnalysisServiceClient.EndAnalyzeSong(IAsyncResult result)
+            at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endMethod, TaskCompletionSource`1 tcs)
+            --- End of inner exception stack trace ---
+            at MixedInKey.Online.KeyDetectionService.&lt;DetectKey&gt;b__3(Task`1 t)
+            at System.Threading.Tasks.Task`1.&lt;&gt;c__DisplayClass1a`1.&lt;ContinueWith&gt;b__19()
+            at System.Threading.Tasks.Task`1.InvokeFuture(Object futureAsObj)
+            at System.Threading.Tasks.Task.InnerInvoke()
+            at System.Threading.Tasks.Task.Execute()</DataItem>
+    </TraceData>
+</ApplicationData>
+</E2ETraceEvent>
+<E2ETraceEvent xmlns="http://schemas.microsoft.com/2004/06/E2ETraceEvent">
+<System xmlns="http://schemas.microsoft.com/2004/06/windows/eventlog/system">
+    <EventID>1</EventID>
+    <Type>3</Type>
+    <SubType Name="Error">0</SubType>
+    <Level>2</Level>
+    <TimeCreated SystemTime="2013-10-03T15:20:25.2239007Z" />
+    <Source Name="MixedInKey" />
+    <Correlation ActivityID="{00000000-0000-0000-0000-000000000000}" />
+    <Execution ProcessName="MixedInKey" ProcessID="1680" ThreadID="1" />
+    <Channel />
+    <Computer>XEO-PC</Computer>
+</System>
+<ApplicationData>
+    <TraceData>
+        <DataItem>Version: 5.0.794.0</DataItem>
+        <DataItem>C:\Users\Xeo\Desktop\Helicopter Showdown &amp; Virtual Riot - Cali Born [Electro-Dance.pl].mp3</DataItem>
+        <DataItem>MixedInKey.Online.KeyDetectionException: Mixed In Key could not detect the key of this file due to a temporary problem connecting to the server. Please retry in a few moments ---&gt; System.ServiceModel.EndpointNotFoundException: There was no endpoint listening at https://online5.mixedinkey.com/Services/Analysis/AnalyzeSong that could accept the message. This is often caused by an incorrect address or SOAP action. See InnerException, if present, for more details. ---&gt; System.Net.WebException: Unable to connect to the remote server ---&gt; System.Net.Sockets.SocketException: An attempt was made to access a socket in a way forbidden by its access permissions 23.21.226.208:443
+            at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+            at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket&amp; socket, IPAddress&amp; address, ConnectSocketState state, IAsyncResult asyncResult, Int32 timeout, Exception&amp; exception)
+            --- End of inner exception stack trace ---
+            at System.Net.HttpWebRequest.EndGetRequestStream(IAsyncResult asyncResult, TransportContext&amp; context)
+            at System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStreamAsyncResult.CompleteGetRequestStream(IAsyncResult result)
+            --- End of inner exception stack trace ---
+
+            Server stack trace:
+            at System.Runtime.AsyncResult.End[TAsyncResult](IAsyncResult result)
+            at System.ServiceModel.Channels.ServiceChannel.SendAsyncResult.End(SendAsyncResult result)
+            at System.ServiceModel.Channels.ServiceChannel.EndCall(String action, Object[] outs, IAsyncResult result)
+            at System.ServiceModel.Channels.ServiceChannelProxy.InvokeEndService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+            at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+            Exception rethrown at [0]:
+            at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+            at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData&amp; msgData, Int32 type)
+            at MixedInKey.Online.IAnalysisServiceAsync.EndAnalyzeSong(IAsyncResult result)
+            at MixedInKey.Online.AnalysisServiceClient.EndAnalyzeSong(IAsyncResult result)
+            at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endMethod, TaskCompletionSource`1 tcs)
+            --- End of inner exception stack trace ---
+            at MixedInKey.Online.KeyDetectionService.&lt;DetectKey&gt;b__3(Task`1 t)
+            at System.Threading.Tasks.Task`1.&lt;&gt;c__DisplayClass1a`1.&lt;ContinueWith&gt;b__19()
+            at System.Threading.Tasks.Task`1.InvokeFuture(Object futureAsObj)
+            at System.Threading.Tasks.Task.InnerInvoke()
+            at System.Threading.Tasks.Task.Execute()</DataItem>
+    </TraceData>
+</ApplicationData>
+</E2ETraceEvent>
+<E2ETraceEvent xmlns="http://schemas.microsoft.com/2004/06/E2ETraceEvent">
+<System xmlns="http://schemas.microsoft.com/2004/06/windows/eventlog/system">
+    <EventID>1</EventID>
+    <Type>3</Type>
+    <SubType Name="Error">0</SubType>
+    <Level>2</Level>
+    <TimeCreated SystemTime="2013-10-03T15:21:16.6028394Z" />
+    <Source Name="MixedInKey" />
+    <Correlation ActivityID="{00000000-0000-0000-0000-000000000000}" />
+    <Execution ProcessName="MixedInKey" ProcessID="1680" ThreadID="1" />
+    <Channel />
+    <Computer>XEO-PC</Computer>
+</System>
+<ApplicationData>
+    <TraceData>
+        <DataItem>Version: 5.0.794.0</DataItem>
+        <DataItem>C:\Users\Xeo\Desktop\Titan (Pigeonfox Remix).mp3</DataItem>
+        <DataItem>MixedInKey.Online.KeyDetectionException: Mixed In Key could not detect the key of this file due to a temporary problem connecting to the server. Please retry in a few moments ---&gt; System.ServiceModel.EndpointNotFoundException: There was no endpoint listening at https://online5.mixedinkey.com/Services/Analysis/AnalyzeSong that could accept the message. This is often caused by an incorrect address or SOAP action. See InnerException, if present, for more details. ---&gt; System.Net.WebException: Unable to connect to the remote server ---&gt; System.Net.Sockets.SocketException: An attempt was made to access a socket in a way forbidden by its access permissions 54.225.210.244:443
+            at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+            at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket&amp; socket, IPAddress&amp; address, ConnectSocketState state, IAsyncResult asyncResult, Int32 timeout, Exception&amp; exception)
+            --- End of inner exception stack trace ---
+            at System.Net.HttpWebRequest.EndGetRequestStream(IAsyncResult asyncResult, TransportContext&amp; context)
+            at System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStreamAsyncResult.CompleteGetRequestStream(IAsyncResult result)
+            --- End of inner exception stack trace ---
+
+            Server stack trace:
+            at System.Runtime.AsyncResult.End[TAsyncResult](IAsyncResult result)
+            at System.ServiceModel.Channels.ServiceChannel.SendAsyncResult.End(SendAsyncResult result)
+            at System.ServiceModel.Channels.ServiceChannel.EndCall(String action, Object[] outs, IAsyncResult result)
+            at System.ServiceModel.Channels.ServiceChannelProxy.InvokeEndService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+            at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+            Exception rethrown at [0]:
+            at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+            at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData&amp; msgData, Int32 type)
+            at MixedInKey.Online.IAnalysisServiceAsync.EndAnalyzeSong(IAsyncResult result)
+            at MixedInKey.Online.AnalysisServiceClient.EndAnalyzeSong(IAsyncResult result)
+            at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endMethod, TaskCompletionSource`1 tcs)
+            --- End of inner exception stack trace ---
+            at MixedInKey.Online.KeyDetectionService.&lt;DetectKey&gt;b__3(Task`1 t)
+            at System.Threading.Tasks.Task`1.&lt;&gt;c__DisplayClass1a`1.&lt;ContinueWith&gt;b__19()
+            at System.Threading.Tasks.Task`1.InvokeFuture(Object futureAsObj)
+            at System.Threading.Tasks.Task.InnerInvoke()
+            at System.Threading.Tasks.Task.Execute()</DataItem>
+    </TraceData>
+</ApplicationData>
+</E2ETraceEvent>
+<E2ETraceEvent xmlns="http://schemas.microsoft.com/2004/06/E2ETraceEvent">
+<System xmlns="http://schemas.microsoft.com/2004/06/windows/eventlog/system">
+    <EventID>1</EventID>
+    <Type>3</Type>
+    <SubType Name="Error">0</SubType>
+    <Level>2</Level>
+    <TimeCreated SystemTime="2013-10-03T15:21:16.7258464Z" />
+    <Source Name="MixedInKey" />
+    <Correlation ActivityID="{00000000-0000-0000-0000-000000000000}" />
+    <Execution ProcessName="MixedInKey" ProcessID="1680" ThreadID="1" />
+    <Channel />
+    <Computer>XEO-PC</Computer>
+</System>
+<ApplicationData>
+    <TraceData>
+        <DataItem>Version: 5.0.794.0</DataItem>
+        <DataItem>C:\Users\Xeo\Desktop\Trap!!! Gent &amp; Jawns - Turnup.mp3</DataItem>
+        <DataItem>MixedInKey.Online.KeyDetectionException: Mixed In Key could not detect the key of this file due to a temporary problem connecting to the server. Please retry in a few moments ---&gt; System.ServiceModel.EndpointNotFoundException: There was no endpoint listening at https://online5.mixedinkey.com/Services/Analysis/AnalyzeSong that could accept the message. This is often caused by an incorrect address or SOAP action. See InnerException, if present, for more details. ---&gt; System.Net.WebException: Unable to connect to the remote server ---&gt; System.Net.Sockets.SocketException: An attempt was made to access a socket in a way forbidden by its access permissions 54.225.210.244:443
+            at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+            at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket&amp; socket, IPAddress&amp; address, ConnectSocketState state, IAsyncResult asyncResult, Int32 timeout, Exception&amp; exception)
+            --- End of inner exception stack trace ---
+            at System.Net.HttpWebRequest.EndGetRequestStream(IAsyncResult asyncResult, TransportContext&amp; context)
+            at System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStreamAsyncResult.CompleteGetRequestStream(IAsyncResult result)
+            --- End of inner exception stack trace ---
+
+            Server stack trace:
+            at System.Runtime.AsyncResult.End[TAsyncResult](IAsyncResult result)
+            at System.ServiceModel.Channels.ServiceChannel.SendAsyncResult.End(SendAsyncResult result)
+            at System.ServiceModel.Channels.ServiceChannel.EndCall(String action, Object[] outs, IAsyncResult result)
+            at System.ServiceModel.Channels.ServiceChannelProxy.InvokeEndService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+            at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+            Exception rethrown at [0]:
+            at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+            at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData&amp; msgData, Int32 type)
+            at MixedInKey.Online.IAnalysisServiceAsync.EndAnalyzeSong(IAsyncResult result)
+            at MixedInKey.Online.AnalysisServiceClient.EndAnalyzeSong(IAsyncResult result)
+            at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endMethod, TaskCompletionSource`1 tcs)
+            --- End of inner exception stack trace ---
+            at MixedInKey.Online.KeyDetectionService.&lt;DetectKey&gt;b__3(Task`1 t)
+            at System.Threading.Tasks.Task`1.&lt;&gt;c__DisplayClass1a`1.&lt;ContinueWith&gt;b__19()
+            at System.Threading.Tasks.Task`1.InvokeFuture(Object futureAsObj)
+            at System.Threading.Tasks.Task.InnerInvoke()
+            at System.Threading.Tasks.Task.Execute()</DataItem>
+    </TraceData>
+</ApplicationData>
+</E2ETraceEvent>
+<E2ETraceEvent xmlns="http://schemas.microsoft.com/2004/06/E2ETraceEvent">
+<System xmlns="http://schemas.microsoft.com/2004/06/windows/eventlog/system">
+    <EventID>1</EventID>
+    <Type>3</Type>
+    <SubType Name="Error">0</SubType>
+    <Level>2</Level>
+    <TimeCreated SystemTime="2013-10-03T15:21:21.2281039Z" />
+    <Source Name="MixedInKey" />
+    <Correlation ActivityID="{00000000-0000-0000-0000-000000000000}" />
+    <Execution ProcessName="MixedInKey" ProcessID="1680" ThreadID="1" />
+    <Channel />
+    <Computer>XEO-PC</Computer>
+</System>
+<ApplicationData>
+    <TraceData>
+        <DataItem>Version: 5.0.794.0</DataItem>
+        <DataItem>C:\Users\Xeo\Desktop\140_8A_HS - TRAPTSTEP [MSTR].mp3</DataItem>
+        <DataItem>MixedInKey.Online.KeyDetectionException: Mixed In Key could not detect the key of this file due to a temporary problem connecting to the server. Please retry in a few moments ---&gt; System.ServiceModel.EndpointNotFoundException: There was no endpoint listening at https://online5.mixedinkey.com/Services/Analysis/AnalyzeSong that could accept the message. This is often caused by an incorrect address or SOAP action. See InnerException, if present, for more details. ---&gt; System.Net.WebException: Unable to connect to the remote server ---&gt; System.Net.Sockets.SocketException: An attempt was made to access a socket in a way forbidden by its access permissions 54.225.210.244:443
+            at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+            at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket&amp; socket, IPAddress&amp; address, ConnectSocketState state, IAsyncResult asyncResult, Int32 timeout, Exception&amp; exception)
+            --- End of inner exception stack trace ---
+            at System.Net.HttpWebRequest.EndGetRequestStream(IAsyncResult asyncResult, TransportContext&amp; context)
+            at System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStreamAsyncResult.CompleteGetRequestStream(IAsyncResult result)
+            --- End of inner exception stack trace ---
+
+            Server stack trace:
+            at System.Runtime.AsyncResult.End[TAsyncResult](IAsyncResult result)
+            at System.ServiceModel.Channels.ServiceChannel.SendAsyncResult.End(SendAsyncResult result)
+            at System.ServiceModel.Channels.ServiceChannel.EndCall(String action, Object[] outs, IAsyncResult result)
+            at System.ServiceModel.Channels.ServiceChannelProxy.InvokeEndService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+            at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+            Exception rethrown at [0]:
+            at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+            at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData&amp; msgData, Int32 type)
+            at MixedInKey.Online.IAnalysisServiceAsync.EndAnalyzeSong(IAsyncResult result)
+            at MixedInKey.Online.AnalysisServiceClient.EndAnalyzeSong(IAsyncResult result)
+            at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endMethod, TaskCompletionSource`1 tcs)
+            --- End of inner exception stack trace ---
+            at MixedInKey.Online.KeyDetectionService.&lt;DetectKey&gt;b__3(Task`1 t)
+            at System.Threading.Tasks.Task`1.&lt;&gt;c__DisplayClass1a`1.&lt;ContinueWith&gt;b__19()
+            at System.Threading.Tasks.Task`1.InvokeFuture(Object futureAsObj)
+            at System.Threading.Tasks.Task.InnerInvoke()
+            at System.Threading.Tasks.Task.Execute()</DataItem>
+    </TraceData>
+</ApplicationData>
+</E2ETraceEvent>
+<E2ETraceEvent xmlns="http://schemas.microsoft.com/2004/06/E2ETraceEvent">
+<System xmlns="http://schemas.microsoft.com/2004/06/windows/eventlog/system">
+    <EventID>1</EventID>
+    <Type>3</Type>
+    <SubType Name="Error">0</SubType>
+    <Level>2</Level>
+    <TimeCreated SystemTime="2013-10-03T15:21:22.5701807Z" />
+    <Source Name="MixedInKey" />
+    <Correlation ActivityID="{00000000-0000-0000-0000-000000000000}" />
+    <Execution ProcessName="MixedInKey" ProcessID="1680" ThreadID="1" />
+    <Channel />
+    <Computer>XEO-PC</Computer>
+</System>
+<ApplicationData>
+    <TraceData>
+        <DataItem>Version: 5.0.794.0</DataItem>
+        <DataItem>C:\Users\Xeo\Desktop\Helicopter Showdown &amp; Virtual Riot - Cali Born [Electro-Dance.pl].mp3</DataItem>
+        <DataItem>MixedInKey.Online.KeyDetectionException: Mixed In Key could not detect the key of this file due to a temporary problem connecting to the server. Please retry in a few moments ---&gt; System.ServiceModel.EndpointNotFoundException: There was no endpoint listening at https://online5.mixedinkey.com/Services/Analysis/AnalyzeSong that could accept the message. This is often caused by an incorrect address or SOAP action. See InnerException, if present, for more details. ---&gt; System.Net.WebException: Unable to connect to the remote server ---&gt; System.Net.Sockets.SocketException: An attempt was made to access a socket in a way forbidden by its access permissions 54.225.210.244:443
+            at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+            at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket&amp; socket, IPAddress&amp; address, ConnectSocketState state, IAsyncResult asyncResult, Int32 timeout, Exception&amp; exception)
+            --- End of inner exception stack trace ---
+            at System.Net.HttpWebRequest.EndGetRequestStream(IAsyncResult asyncResult, TransportContext&amp; context)
+            at System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStreamAsyncResult.CompleteGetRequestStream(IAsyncResult result)
+            --- End of inner exception stack trace ---
+
+            Server stack trace:
+            at System.Runtime.AsyncResult.End[TAsyncResult](IAsyncResult result)
+            at System.ServiceModel.Channels.ServiceChannel.SendAsyncResult.End(SendAsyncResult result)
+            at System.ServiceModel.Channels.ServiceChannel.EndCall(String action, Object[] outs, IAsyncResult result)
+            at System.ServiceModel.Channels.ServiceChannelProxy.InvokeEndService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+            at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+            Exception rethrown at [0]:
+            at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+            at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData&amp; msgData, Int32 type)
+            at MixedInKey.Online.IAnalysisServiceAsync.EndAnalyzeSong(IAsyncResult result)
+            at MixedInKey.Online.AnalysisServiceClient.EndAnalyzeSong(IAsyncResult result)
+            at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endMethod, TaskCompletionSource`1 tcs)
+            --- End of inner exception stack trace ---
+            at MixedInKey.Online.KeyDetectionService.&lt;DetectKey&gt;b__3(Task`1 t)
+            at System.Threading.Tasks.Task`1.&lt;&gt;c__DisplayClass1a`1.&lt;ContinueWith&gt;b__19()
+            at System.Threading.Tasks.Task`1.InvokeFuture(Object futureAsObj)
+            at System.Threading.Tasks.Task.InnerInvoke()
+            at System.Threading.Tasks.Task.Execute()</DataItem>
+    </TraceData>
+</ApplicationData>
+</E2ETraceEvent>
+<E2ETraceEvent xmlns="http://schemas.microsoft.com/2004/06/E2ETraceEvent">
+<System xmlns="http://schemas.microsoft.com/2004/06/windows/eventlog/system">
+    <EventID>1</EventID>
+    <Type>3</Type>
+    <SubType Name="Error">0</SubType>
+    <Level>2</Level>
+    <TimeCreated SystemTime="2013-10-03T15:21:55.6430723Z" />
+    <Source Name="MixedInKey" />
+    <Correlation ActivityID="{00000000-0000-0000-0000-000000000000}" />
+    <Execution ProcessName="MixedInKey" ProcessID="1680" ThreadID="1" />
+    <Channel />
+    <Computer>XEO-PC</Computer>
+</System>
+<ApplicationData>
+    <TraceData>
+        <DataItem>Version: 5.0.794.0</DataItem>
+        <DataItem>C:\Users\Xeo\Desktop\Trap!!! Gent &amp; Jawns - Turnup.mp3</DataItem>
+        <DataItem>MixedInKey.Online.KeyDetectionException: Mixed In Key could not detect the key of this file due to a temporary problem connecting to the server. Please retry in a few moments ---&gt; System.ServiceModel.EndpointNotFoundException: There was no endpoint listening at https://online5.mixedinkey.com/Services/Analysis/AnalyzeSong that could accept the message. This is often caused by an incorrect address or SOAP action. See InnerException, if present, for more details. ---&gt; System.Net.WebException: Unable to connect to the remote server ---&gt; System.Net.Sockets.SocketException: An attempt was made to access a socket in a way forbidden by its access permissions 54.225.210.244:443
+            at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+            at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket&amp; socket, IPAddress&amp; address, ConnectSocketState state, IAsyncResult asyncResult, Int32 timeout, Exception&amp; exception)
+            --- End of inner exception stack trace ---
+            at System.Net.HttpWebRequest.EndGetRequestStream(IAsyncResult asyncResult, TransportContext&amp; context)
+            at System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStreamAsyncResult.CompleteGetRequestStream(IAsyncResult result)
+            --- End of inner exception stack trace ---
+
+            Server stack trace:
+            at System.Runtime.AsyncResult.End[TAsyncResult](IAsyncResult result)
+            at System.ServiceModel.Channels.ServiceChannel.SendAsyncResult.End(SendAsyncResult result)
+            at System.ServiceModel.Channels.ServiceChannel.EndCall(String action, Object[] outs, IAsyncResult result)
+            at System.ServiceModel.Channels.ServiceChannelProxy.InvokeEndService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+            at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+            Exception rethrown at [0]:
+            at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+            at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData&amp; msgData, Int32 type)
+            at MixedInKey.Online.IAnalysisServiceAsync.EndAnalyzeSong(IAsyncResult result)
+            at MixedInKey.Online.AnalysisServiceClient.EndAnalyzeSong(IAsyncResult result)
+            at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endMethod, TaskCompletionSource`1 tcs)
+            --- End of inner exception stack trace ---
+            at MixedInKey.Online.KeyDetectionService.&lt;DetectKey&gt;b__3(Task`1 t)
+            at System.Threading.Tasks.Task`1.&lt;&gt;c__DisplayClass1a`1.&lt;ContinueWith&gt;b__19()
+            at System.Threading.Tasks.Task`1.InvokeFuture(Object futureAsObj)
+            at System.Threading.Tasks.Task.InnerInvoke()
+            at System.Threading.Tasks.Task.Execute()</DataItem>
+    </TraceData>
+</ApplicationData>
+</E2ETraceEvent>
+<E2ETraceEvent xmlns="http://schemas.microsoft.com/2004/06/E2ETraceEvent">
+<System xmlns="http://schemas.microsoft.com/2004/06/windows/eventlog/system">
+    <EventID>1</EventID>
+    <Type>3</Type>
+    <SubType Name="Error">0</SubType>
+    <Level>2</Level>
+    <TimeCreated SystemTime="2013-10-03T15:21:56.0620963Z" />
+    <Source Name="MixedInKey" />
+    <Correlation ActivityID="{00000000-0000-0000-0000-000000000000}" />
+    <Execution ProcessName="MixedInKey" ProcessID="1680" ThreadID="1" />
+    <Channel />
+    <Computer>XEO-PC</Computer>
+</System>
+<ApplicationData>
+    <TraceData>
+        <DataItem>Version: 5.0.794.0</DataItem>
+        <DataItem>C:\Users\Xeo\Desktop\Titan (Pigeonfox Remix).mp3</DataItem>
+        <DataItem>MixedInKey.Online.KeyDetectionException: Mixed In Key could not detect the key of this file due to a temporary problem connecting to the server. Please retry in a few moments ---&gt; System.ServiceModel.EndpointNotFoundException: There was no endpoint listening at https://online5.mixedinkey.com/Services/Analysis/AnalyzeSong that could accept the message. This is often caused by an incorrect address or SOAP action. See InnerException, if present, for more details. ---&gt; System.Net.WebException: Unable to connect to the remote server ---&gt; System.Net.Sockets.SocketException: An attempt was made to access a socket in a way forbidden by its access permissions 54.225.210.244:443
+            at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+            at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket&amp; socket, IPAddress&amp; address, ConnectSocketState state, IAsyncResult asyncResult, Int32 timeout, Exception&amp; exception)
+            --- End of inner exception stack trace ---
+            at System.Net.HttpWebRequest.EndGetRequestStream(IAsyncResult asyncResult, TransportContext&amp; context)
+            at System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStreamAsyncResult.CompleteGetRequestStream(IAsyncResult result)
+            --- End of inner exception stack trace ---
+
+            Server stack trace:
+            at System.Runtime.AsyncResult.End[TAsyncResult](IAsyncResult result)
+            at System.ServiceModel.Channels.ServiceChannel.SendAsyncResult.End(SendAsyncResult result)
+            at System.ServiceModel.Channels.ServiceChannel.EndCall(String action, Object[] outs, IAsyncResult result)
+            at System.ServiceModel.Channels.ServiceChannelProxy.InvokeEndService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+            at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+            Exception rethrown at [0]:
+            at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+            at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData&amp; msgData, Int32 type)
+            at MixedInKey.Online.IAnalysisServiceAsync.EndAnalyzeSong(IAsyncResult result)
+            at MixedInKey.Online.AnalysisServiceClient.EndAnalyzeSong(IAsyncResult result)
+            at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endMethod, TaskCompletionSource`1 tcs)
+            --- End of inner exception stack trace ---
+            at MixedInKey.Online.KeyDetectionService.&lt;DetectKey&gt;b__3(Task`1 t)
+            at System.Threading.Tasks.Task`1.&lt;&gt;c__DisplayClass1a`1.&lt;ContinueWith&gt;b__19()
+            at System.Threading.Tasks.Task`1.InvokeFuture(Object futureAsObj)
+            at System.Threading.Tasks.Task.InnerInvoke()
+            at System.Threading.Tasks.Task.Execute()</DataItem>
+    </TraceData>
+</ApplicationData>
+</E2ETraceEvent>
+<E2ETraceEvent xmlns="http://schemas.microsoft.com/2004/06/E2ETraceEvent">
+<System xmlns="http://schemas.microsoft.com/2004/06/windows/eventlog/system">
+    <EventID>1</EventID>
+    <Type>3</Type>
+    <SubType Name="Error">0</SubType>
+    <Level>2</Level>
+    <TimeCreated SystemTime="2013-10-03T15:23:44.5243000Z" />
+    <Source Name="MixedInKey" />
+    <Correlation ActivityID="{00000000-0000-0000-0000-000000000000}" />
+    <Execution ProcessName="MixedInKey" ProcessID="1680" ThreadID="1" />
+    <Channel />
+    <Computer>XEO-PC</Computer>
+</System>
+<ApplicationData>
+    <TraceData>
+        <DataItem>Version: 5.0.794.0</DataItem>
+        <DataItem>C:\Users\Xeo\Desktop\Titan (Pigeonfox Remix).mp3</DataItem>
+        <DataItem>MixedInKey.Online.KeyDetectionException: Mixed In Key could not detect the key of this file due to a temporary problem connecting to the server. Please retry in a few moments ---&gt; System.ServiceModel.EndpointNotFoundException: There was no endpoint listening at https://online5.mixedinkey.com/Services/Analysis/AnalyzeSong that could accept the message. This is often caused by an incorrect address or SOAP action. See InnerException, if present, for more details. ---&gt; System.Net.WebException: Unable to connect to the remote server ---&gt; System.Net.Sockets.SocketException: An attempt was made to access a socket in a way forbidden by its access permissions 54.225.210.244:443
+            at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+            at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket&amp; socket, IPAddress&amp; address, ConnectSocketState state, IAsyncResult asyncResult, Int32 timeout, Exception&amp; exception)
+            --- End of inner exception stack trace ---
+            at System.Net.HttpWebRequest.EndGetRequestStream(IAsyncResult asyncResult, TransportContext&amp; context)
+            at System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStreamAsyncResult.CompleteGetRequestStream(IAsyncResult result)
+            --- End of inner exception stack trace ---
+
+            Server stack trace:
+            at System.Runtime.AsyncResult.End[TAsyncResult](IAsyncResult result)
+            at System.ServiceModel.Channels.ServiceChannel.SendAsyncResult.End(SendAsyncResult result)
+            at System.ServiceModel.Channels.ServiceChannel.EndCall(String action, Object[] outs, IAsyncResult result)
+            at System.ServiceModel.Channels.ServiceChannelProxy.InvokeEndService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+            at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+            Exception rethrown at [0]:
+            at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+            at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData&amp; msgData, Int32 type)
+            at MixedInKey.Online.IAnalysisServiceAsync.EndAnalyzeSong(IAsyncResult result)
+            at MixedInKey.Online.AnalysisServiceClient.EndAnalyzeSong(IAsyncResult result)
+            at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endMethod, TaskCompletionSource`1 tcs)
+            --- End of inner exception stack trace ---
+            at MixedInKey.Online.KeyDetectionService.&lt;DetectKey&gt;b__3(Task`1 t)
+            at System.Threading.Tasks.Task`1.&lt;&gt;c__DisplayClass1a`1.&lt;ContinueWith&gt;b__19()
+            at System.Threading.Tasks.Task`1.InvokeFuture(Object futureAsObj)
+            at System.Threading.Tasks.Task.InnerInvoke()
+            at System.Threading.Tasks.Task.Execute()</DataItem>
+    </TraceData>
+</ApplicationData>
+</E2ETraceEvent>
+<E2ETraceEvent xmlns="http://schemas.microsoft.com/2004/06/E2ETraceEvent">
+<System xmlns="http://schemas.microsoft.com/2004/06/windows/eventlog/system">
+    <EventID>1</EventID>
+    <Type>3</Type>
+    <SubType Name="Error">0</SubType>
+    <Level>2</Level>
+    <TimeCreated SystemTime="2013-10-03T15:23:44.7963155Z" />
+    <Source Name="MixedInKey" />
+    <Correlation ActivityID="{00000000-0000-0000-0000-000000000000}" />
+    <Execution ProcessName="MixedInKey" ProcessID="1680" ThreadID="1" />
+    <Channel />
+    <Computer>XEO-PC</Computer>
+</System>
+<ApplicationData>
+    <TraceData>
+        <DataItem>Version: 5.0.794.0</DataItem>
+        <DataItem>C:\Users\Xeo\Desktop\Trap!!! Gent &amp; Jawns - Turnup.mp3</DataItem>
+        <DataItem>MixedInKey.Online.KeyDetectionException: Mixed In Key could not detect the key of this file due to a temporary problem connecting to the server. Please retry in a few moments ---&gt; System.ServiceModel.EndpointNotFoundException: There was no endpoint listening at https://online5.mixedinkey.com/Services/Analysis/AnalyzeSong that could accept the message. This is often caused by an incorrect address or SOAP action. See InnerException, if present, for more details. ---&gt; System.Net.WebException: Unable to connect to the remote server ---&gt; System.Net.Sockets.SocketException: An attempt was made to access a socket in a way forbidden by its access permissions 54.225.210.244:443
+            at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+            at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket&amp; socket, IPAddress&amp; address, ConnectSocketState state, IAsyncResult asyncResult, Int32 timeout, Exception&amp; exception)
+            --- End of inner exception stack trace ---
+            at System.Net.HttpWebRequest.EndGetRequestStream(IAsyncResult asyncResult, TransportContext&amp; context)
+            at System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStreamAsyncResult.CompleteGetRequestStream(IAsyncResult result)
+            --- End of inner exception stack trace ---
+
+            Server stack trace:
+            at System.Runtime.AsyncResult.End[TAsyncResult](IAsyncResult result)
+            at System.ServiceModel.Channels.ServiceChannel.SendAsyncResult.End(SendAsyncResult result)
+            at System.ServiceModel.Channels.ServiceChannel.EndCall(String action, Object[] outs, IAsyncResult result)
+            at System.ServiceModel.Channels.ServiceChannelProxy.InvokeEndService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+            at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+            Exception rethrown at [0]:
+            at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+            at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData&amp; msgData, Int32 type)
+            at MixedInKey.Online.IAnalysisServiceAsync.EndAnalyzeSong(IAsyncResult result)
+            at MixedInKey.Online.AnalysisServiceClient.EndAnalyzeSong(IAsyncResult result)
+            at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endMethod, TaskCompletionSource`1 tcs)
+            --- End of inner exception stack trace ---
+            at MixedInKey.Online.KeyDetectionService.&lt;DetectKey&gt;b__3(Task`1 t)
+            at System.Threading.Tasks.Task`1.&lt;&gt;c__DisplayClass1a`1.&lt;ContinueWith&gt;b__19()
+            at System.Threading.Tasks.Task`1.InvokeFuture(Object futureAsObj)
+            at System.Threading.Tasks.Task.InnerInvoke()
+            at System.Threading.Tasks.Task.Execute()</DataItem>
+    </TraceData>
+</ApplicationData>
+</E2ETraceEvent>
+<E2ETraceEvent xmlns="http://schemas.microsoft.com/2004/06/E2ETraceEvent">
+<System xmlns="http://schemas.microsoft.com/2004/06/windows/eventlog/system">
+    <EventID>1</EventID>
+    <Type>3</Type>
+    <SubType Name="Error">0</SubType>
+    <Level>2</Level>
+    <TimeCreated SystemTime="2013-10-03T15:23:46.7184255Z" />
+    <Source Name="MixedInKey" />
+    <Correlation ActivityID="{00000000-0000-0000-0000-000000000000}" />
+    <Execution ProcessName="MixedInKey" ProcessID="1680" ThreadID="1" />
+    <Channel />
+    <Computer>XEO-PC</Computer>
+</System>
+<ApplicationData>
+    <TraceData>
+        <DataItem>Version: 5.0.794.0</DataItem>
+        <DataItem>C:\Users\Xeo\Desktop\140_8A_HS - TRAPTSTEP [MSTR].mp3</DataItem>
+        <DataItem>MixedInKey.Online.KeyDetectionException: Mixed In Key could not detect the key of this file due to a temporary problem connecting to the server. Please retry in a few moments ---&gt; System.ServiceModel.EndpointNotFoundException: There was no endpoint listening at https://online5.mixedinkey.com/Services/Analysis/AnalyzeSong that could accept the message. This is often caused by an incorrect address or SOAP action. See InnerException, if present, for more details. ---&gt; System.Net.WebException: Unable to connect to the remote server ---&gt; System.Net.Sockets.SocketException: An attempt was made to access a socket in a way forbidden by its access permissions 54.225.210.244:443
+            at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+            at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket&amp; socket, IPAddress&amp; address, ConnectSocketState state, IAsyncResult asyncResult, Int32 timeout, Exception&amp; exception)
+            --- End of inner exception stack trace ---
+            at System.Net.HttpWebRequest.EndGetRequestStream(IAsyncResult asyncResult, TransportContext&amp; context)
+            at System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStreamAsyncResult.CompleteGetRequestStream(IAsyncResult result)
+            --- End of inner exception stack trace ---
+
+            Server stack trace:
+            at System.Runtime.AsyncResult.End[TAsyncResult](IAsyncResult result)
+            at System.ServiceModel.Channels.ServiceChannel.SendAsyncResult.End(SendAsyncResult result)
+            at System.ServiceModel.Channels.ServiceChannel.EndCall(String action, Object[] outs, IAsyncResult result)
+            at System.ServiceModel.Channels.ServiceChannelProxy.InvokeEndService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+            at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+            Exception rethrown at [0]:
+            at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+            at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData&amp; msgData, Int32 type)
+            at MixedInKey.Online.IAnalysisServiceAsync.EndAnalyzeSong(IAsyncResult result)
+            at MixedInKey.Online.AnalysisServiceClient.EndAnalyzeSong(IAsyncResult result)
+            at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endMethod, TaskCompletionSource`1 tcs)
+            --- End of inner exception stack trace ---
+            at MixedInKey.Online.KeyDetectionService.&lt;DetectKey&gt;b__3(Task`1 t)
+            at System.Threading.Tasks.Task`1.&lt;&gt;c__DisplayClass1a`1.&lt;ContinueWith&gt;b__19()
+            at System.Threading.Tasks.Task`1.InvokeFuture(Object futureAsObj)
+            at System.Threading.Tasks.Task.InnerInvoke()
+            at System.Threading.Tasks.Task.Execute()</DataItem>
+    </TraceData>
+</ApplicationData>
+</E2ETraceEvent>
+<E2ETraceEvent xmlns="http://schemas.microsoft.com/2004/06/E2ETraceEvent">
+<System xmlns="http://schemas.microsoft.com/2004/06/windows/eventlog/system">
+    <EventID>1</EventID>
+    <Type>3</Type>
+    <SubType Name="Error">0</SubType>
+    <Level>2</Level>
+    <TimeCreated SystemTime="2013-10-03T15:23:47.2114537Z" />
+    <Source Name="MixedInKey" />
+    <Correlation ActivityID="{00000000-0000-0000-0000-000000000000}" />
+    <Execution ProcessName="MixedInKey" ProcessID="1680" ThreadID="1" />
+    <Channel />
+    <Computer>XEO-PC</Computer>
+</System>
+<ApplicationData>
+    <TraceData>
+        <DataItem>Version: 5.0.794.0</DataItem>
+        <DataItem>C:\Users\Xeo\Desktop\Helicopter Showdown &amp; Virtual Riot - Cali Born [Electro-Dance.pl].mp3</DataItem>
+        <DataItem>MixedInKey.Online.KeyDetectionException: Mixed In Key could not detect the key of this file due to a temporary problem connecting to the server. Please retry in a few moments ---&gt; System.ServiceModel.EndpointNotFoundException: There was no endpoint listening at https://online5.mixedinkey.com/Services/Analysis/AnalyzeSong that could accept the message. This is often caused by an incorrect address or SOAP action. See InnerException, if present, for more details. ---&gt; System.Net.WebException: Unable to connect to the remote server ---&gt; System.Net.Sockets.SocketException: An attempt was made to access a socket in a way forbidden by its access permissions 54.225.210.244:443
+            at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+            at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket&amp; socket, IPAddress&amp; address, ConnectSocketState state, IAsyncResult asyncResult, Int32 timeout, Exception&amp; exception)
+            --- End of inner exception stack trace ---
+            at System.Net.HttpWebRequest.EndGetRequestStream(IAsyncResult asyncResult, TransportContext&amp; context)
+            at System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStreamAsyncResult.CompleteGetRequestStream(IAsyncResult result)
+            --- End of inner exception stack trace ---
+
+            Server stack trace:
+            at System.Runtime.AsyncResult.End[TAsyncResult](IAsyncResult result)
+            at System.ServiceModel.Channels.ServiceChannel.SendAsyncResult.End(SendAsyncResult result)
+            at System.ServiceModel.Channels.ServiceChannel.EndCall(String action, Object[] outs, IAsyncResult result)
+            at System.ServiceModel.Channels.ServiceChannelProxy.InvokeEndService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+            at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+            Exception rethrown at [0]:
+            at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+            at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData&amp; msgData, Int32 type)
+            at MixedInKey.Online.IAnalysisServiceAsync.EndAnalyzeSong(IAsyncResult result)
+            at MixedInKey.Online.AnalysisServiceClient.EndAnalyzeSong(IAsyncResult result)
+            at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endMethod, TaskCompletionSource`1 tcs)
+            --- End of inner exception stack trace ---
+            at MixedInKey.Online.KeyDetectionService.&lt;DetectKey&gt;b__3(Task`1 t)
+            at System.Threading.Tasks.Task`1.&lt;&gt;c__DisplayClass1a`1.&lt;ContinueWith&gt;b__19()
+            at System.Threading.Tasks.Task`1.InvokeFuture(Object futureAsObj)
+            at System.Threading.Tasks.Task.InnerInvoke()
+            at System.Threading.Tasks.Task.Execute()</DataItem>
+    </TraceData>
+</ApplicationData>
+</E2ETraceEvent>
+<E2ETraceEvent xmlns="http://schemas.microsoft.com/2004/06/E2ETraceEvent">
+<System xmlns="http://schemas.microsoft.com/2004/06/windows/eventlog/system">
+    <EventID>1</EventID>
+    <Type>3</Type>
+    <SubType Name="Error">0</SubType>
+    <Level>2</Level>
+    <TimeCreated SystemTime="2013-10-03T15:24:18.0002147Z" />
+    <Source Name="MixedInKey" />
+    <Correlation ActivityID="{00000000-0000-0000-0000-000000000000}" />
+    <Execution ProcessName="MixedInKey" ProcessID="1680" ThreadID="1" />
+    <Channel />
+    <Computer>XEO-PC</Computer>
+</System>
+<ApplicationData>
+    <TraceData>
+        <DataItem>Version: 5.0.794.0</DataItem>
+        <DataItem>C:\Users\Xeo\Desktop\Trap!!! Gent &amp; Jawns - Turnup.mp3</DataItem>
+        <DataItem>MixedInKey.Online.InvalidLicenseException: The VIP code you entered is no longer valid.
+            at MixedInKey.Online.KeyDetectionService.&lt;DetectKey&gt;b__3(Task`1 t)
+            at System.Threading.Tasks.Task`1.&lt;&gt;c__DisplayClass1a`1.&lt;ContinueWith&gt;b__19()
+            at System.Threading.Tasks.Task`1.InvokeFuture(Object futureAsObj)
+            at System.Threading.Tasks.Task.InnerInvoke()
+            at System.Threading.Tasks.Task.Execute()</DataItem>
+    </TraceData>
+</ApplicationData>
+</E2ETraceEvent>
+<E2ETraceEvent xmlns="http://schemas.microsoft.com/2004/06/E2ETraceEvent">
+<System xmlns="http://schemas.microsoft.com/2004/06/windows/eventlog/system">
+    <EventID>1</EventID>
+    <Type>3</Type>
+    <SubType Name="Error">0</SubType>
+    <Level>2</Level>
+    <TimeCreated SystemTime="2013-10-03T15:24:18.1362225Z" />
+    <Source Name="MixedInKey" />
+    <Correlation ActivityID="{00000000-0000-0000-0000-000000000000}" />
+    <Execution ProcessName="MixedInKey" ProcessID="1680" ThreadID="1" />
+    <Channel />
+    <Computer>XEO-PC</Computer>
+</System>
+<ApplicationData>
+    <TraceData>
+        <DataItem>Version: 5.0.794.0</DataItem>
+        <DataItem>C:\Users\Xeo\Desktop\Titan (Pigeonfox Remix).mp3</DataItem>
+        <DataItem>MixedInKey.Online.InvalidLicenseException: The VIP code you entered is no longer valid.
+            at MixedInKey.Online.KeyDetectionService.&lt;DetectKey&gt;b__3(Task`1 t)
+            at System.Threading.Tasks.Task`1.&lt;&gt;c__DisplayClass1a`1.&lt;ContinueWith&gt;b__19()
+            at System.Threading.Tasks.Task`1.InvokeFuture(Object futureAsObj)
+            at System.Threading.Tasks.Task.InnerInvoke()
+            at System.Threading.Tasks.Task.Execute()</DataItem>
+    </TraceData>
+</ApplicationData>
+</E2ETraceEvent>
+<E2ETraceEvent xmlns="http://schemas.microsoft.com/2004/06/E2ETraceEvent">
+<System xmlns="http://schemas.microsoft.com/2004/06/windows/eventlog/system">
+    <EventID>1</EventID>
+    <Type>3</Type>
+    <SubType Name="Error">0</SubType>
+    <Level>2</Level>
+    <TimeCreated SystemTime="2013-10-03T15:24:20.7273707Z" />
+    <Source Name="MixedInKey" />
+    <Correlation ActivityID="{00000000-0000-0000-0000-000000000000}" />
+    <Execution ProcessName="MixedInKey" ProcessID="1680" ThreadID="1" />
+    <Channel />
+    <Computer>XEO-PC</Computer>
+</System>
+<ApplicationData>
+    <TraceData>
+        <DataItem>Version: 5.0.794.0</DataItem>
+        <DataItem>C:\Users\Xeo\Desktop\140_8A_HS - TRAPTSTEP [MSTR].mp3</DataItem>
+        <DataItem>MixedInKey.Online.InvalidLicenseException: The VIP code you entered is no longer valid.
+            at MixedInKey.Online.KeyDetectionService.&lt;DetectKey&gt;b__3(Task`1 t)
+            at System.Threading.Tasks.Task`1.&lt;&gt;c__DisplayClass1a`1.&lt;ContinueWith&gt;b__19()
+            at System.Threading.Tasks.Task`1.InvokeFuture(Object futureAsObj)
+            at System.Threading.Tasks.Task.InnerInvoke()
+            at System.Threading.Tasks.Task.Execute()</DataItem>
+    </TraceData>
+</ApplicationData>
+</E2ETraceEvent>
+<E2ETraceEvent xmlns="http://schemas.microsoft.com/2004/06/E2ETraceEvent">
+<System xmlns="http://schemas.microsoft.com/2004/06/windows/eventlog/system">
+    <EventID>1</EventID>
+    <Type>3</Type>
+    <SubType Name="Error">0</SubType>
+    <Level>2</Level>
+    <TimeCreated SystemTime="2013-10-03T15:24:20.9913858Z" />
+    <Source Name="MixedInKey" />
+    <Correlation ActivityID="{00000000-0000-0000-0000-000000000000}" />
+    <Execution ProcessName="MixedInKey" ProcessID="1680" ThreadID="1" />
+    <Channel />
+    <Computer>XEO-PC</Computer>
+</System>
+<ApplicationData>
+    <TraceData>
+        <DataItem>Version: 5.0.794.0</DataItem>
+        <DataItem>C:\Users\Xeo\Desktop\Helicopter Showdown &amp; Virtual Riot - Cali Born [Electro-Dance.pl].mp3</DataItem>
+        <DataItem>MixedInKey.Online.InvalidLicenseException: The VIP code you entered is no longer valid.
+            at MixedInKey.Online.KeyDetectionService.&lt;DetectKey&gt;b__3(Task`1 t)
+            at System.Threading.Tasks.Task`1.&lt;&gt;c__DisplayClass1a`1.&lt;ContinueWith&gt;b__19()
+            at System.Threading.Tasks.Task`1.InvokeFuture(Object futureAsObj)
+            at System.Threading.Tasks.Task.InnerInvoke()
+            at System.Threading.Tasks.Task.Execute()</DataItem>
+    </TraceData>
+</ApplicationData>
+</E2ETraceEvent>

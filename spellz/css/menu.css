@@ -1,0 +1,29 @@
+.menu{
+
+}
+.menu a{
+    text-decoration: none;
+    width: inherit;
+    height: inherit;
+    display: table-cell;
+    vertical-align: middle;
+}
+.menu a:visited, .menu a:link{
+    color: black;
+}
+.menu .menuButton{
+    font-weight: bold;
+    float:left;
+    display:block;
+    width:137px;
+    height: 45px;
+    text-align: center;
+    background: lightsteelblue;
+    color:grey;
+}
+.menu .menuButton.active{
+    background: grey;
+}
+.menu .menuButton.active a:visited, .menu .menuButton.active a:link{
+    color: dodgerblue;
+}
